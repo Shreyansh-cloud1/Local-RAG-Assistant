@@ -1,7 +1,5 @@
-import os  # Imports Python's built-in os module, which allows access to environment variables and operating system functions.
-
+import os
 from dotenv import load_dotenv  # Imports the load_dotenv function from python-dotenv to load variables from a .env file.
-
 from sqlalchemy import create_engine  # Imports create_engine from SQLAlchemy to create a database connection engine.
 
 
