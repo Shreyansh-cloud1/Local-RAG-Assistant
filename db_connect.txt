@@ -1,0 +1,27 @@
+1. List containers inside Docker : docker ps
+2. List all the databases inside : docker exec -it rag-assistant-postgres-1 psql -U postgres -l
+3. Connect to the ragdb : docker exec -it rag-assistant-postgres-1 psql -U postgres -d ragdb
+
+**You'll get:
+ragdb=#
+
+Note :- "psql" is PostgreSQL command line client.
+
+\dt --> shows table
+\d documents --> describe the documents table
+
+
+***When debugging RAG systems, you'll frequently use psql to verify:
+
+// Count of all the Chunks.
+SELECT COUNT(*) FROM documents;
+
+// Data from the table documents.
+SELECT * FROM documents LIMIT 5;
+
+// Check for a Specific embedding.
+SELECT
+    chunk_index,
+    LEFT(content, 300)
+FROM documents
+WHERE content ILIKE '%Evaluation Metrics%';
