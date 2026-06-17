@@ -44,5 +44,6 @@ User Query --> Embedding Model --> PostgreSQL + pgvector --> Top-K Retrieval -->
 ## Run
 
 1. pip install -r requirements.txt
-3. python -m scripts.ingest_pdf data/sample.pdf
-4. uvicorn app.api:app --reload
+2. python -m scripts.ingest_pdf data/sample.pdf
+3. uvicorn app.api:app --reload
+4. streamlit run ui/streamlit_app.py
